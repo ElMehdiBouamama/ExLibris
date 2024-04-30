@@ -1,0 +1,127 @@
+@import 'src/styles/variables';
+
+iframe {
+    filter: brightness(.98);
+}
+
+.min-h-640 {
+    min-height: 640px;
+}
+
+mat-button-toggle-group {
+    width: fit-content;
+    border: none;
+
+    mat-button-toggle {
+        border: none !important;
+    }
+
+    mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .mat-button-toggle-checked {
+        background-color: transparent;
+
+        mat-icon {
+            width: 32px;
+            height: 32px;
+            font-size: 32px;
+        }
+    }
+}
+
+.product-display {
+    width: 50%;
+    height: 600px;
+}
+
+.detail-card {
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+    min-width: 320px;
+    width: 43%;
+    background-color: $color-brightest;
+}
+
+h3 {
+    color: $color-primary;
+    /* /Headline 3 */
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.5rem; /* 116.667% */
+}
+
+h5 {
+    /* Headline 5 */
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1rem;
+}
+
+h6 {
+    /* Body 1 */
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1rem;
+}
+
+.reviews {
+    font-size: 12px;
+
+    ngb-rating {
+        color: $color-secondary;
+        font-size: 18px;
+        position: relative;
+        top: 2px;
+    }
+}
+
+.old-price {
+    color: #F08F8F;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1rem; /* 66.667% */
+    letter-spacing: 0.025rem;
+    text-decoration-line: line-through;
+}
+
+.description {
+    color: #636363e3;
+    /* Body 1 */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: 0.03125rem;
+    margin-top: .5rem;
+}
+
+.new-price {
+    font-size: 2.6875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 55.814% */
+}
+
+.cta-btn {
+    background-color: $color-secondary;
+    padding: 1.5rem 2rem;
+    border: 0;
+    font-variant-caps: all-small-caps;
+    box-shadow: 0 4px 4px #00000040;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: .0625rem;
+    letter-spacing: .125rem;
+    color: $color-primary;
+}

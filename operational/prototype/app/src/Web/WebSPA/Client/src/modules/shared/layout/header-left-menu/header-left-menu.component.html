@@ -1,0 +1,13 @@
+<mat-list>
+    <div *ngFor="let menu_item of menu_items">
+        <h4 *ngIf="menu_item.title">{{menu_item?.title}}</h4>
+        <mat-nav-list *ngIf="menu_item">
+            <a [routerLink]="sub_item?.url ? [sub_item?.url] : ''" *ngFor="let sub_item of menu_item?.items" (click)="sideNav.close()" mat-list-item>
+                <mat-icon fontSet="material-icons-outlined" *ngIf="sub_item?.start_icon">{{sub_item?.start_icon}}</mat-icon>
+                <span>{{sub_item.title}}</span>
+                <mat-icon *ngIf="sub_item?.right_button?.icon">{{sub_item?.right_button?.icon}}</mat-icon>
+            </a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+    </div>
+</mat-list>

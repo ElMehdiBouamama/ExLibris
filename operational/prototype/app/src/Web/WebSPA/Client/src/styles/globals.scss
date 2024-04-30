@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import './bootstrap-overrides';
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'ngx-toastr/toastr-bs5-alert';
+@import 'ngx-toastr/toastr';
+
+html,
+body {
+    font-size: 16px;
+    font-weight: $font-weight-normal;
+    height: 100%;
+    z-index: 10;
+    /* Angular material components styling. For more details see: https://m2.material.io/develop/web/theming/theming-guide */
+    --mdc-elevated-card-container-color: $color-primary;
+}
+
+body {
+    margin: 0;
+    font-family: Montserrat, Roboto, sans-serif;
+}
+
+.mat-primary {
+    background: $color-primary;
+    color: $color-brightest;
+}
+
+.mat-secondary {
+    background: $color-secondary;
+    color: $color-primary;
+    font-variant: small-caps;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(255,255,255,40%);
+}
+
+.bc-white {
+    background-color: $color-brightest;
+}

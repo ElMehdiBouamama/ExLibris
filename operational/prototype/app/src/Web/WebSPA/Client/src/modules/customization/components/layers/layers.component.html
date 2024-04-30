@@ -1,0 +1,29 @@
+<mat-tab-group>
+    <mat-tab label="All">
+        <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+            <div class="box" *ngFor="let object of $objects | async" (click)="select(object)" cdkDrag>
+                <div class="placeholder" *cdkDragPlaceholder></div>
+                <mat-icon [ngClass]="object === ($selectedItem | async) ? 'selected' : ''">title</mat-icon>
+                {{object?.element?.textLines?.at(0)}}
+                <button mat-icon-button [matMenuTriggerFor]="options" [matMenuTriggerData]="{item: object}">
+                    <mat-icon>more_horiz</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+<mat-menu #options="matMenu">
+    <ng-template matMenuContent let-item="item">
+        <button mat-menu-item>Select element <mat-icon>check_circle_outline</mat-icon></button>
+        <button mat-menu-item>Highlight element <mat-icon>highlight</mat-icon></button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>To front <mat-icon>flip_to_front</mat-icon></button>
+        <button mat-menu-item>Forward<mat-icon>tab_unselected</mat-icon></button>
+        <button mat-menu-item>Backward <mat-icon>tab</mat-icon></button>
+        <button mat-menu-item>To back <mat-icon>flip_to_back</mat-icon></button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>Copy <mat-icon>file_copy</mat-icon></button>
+        <button mat-menu-item (click)="delete(item)">Delete <mat-icon>delete</mat-icon></button>
+    </ng-template>
+</mat-menu>

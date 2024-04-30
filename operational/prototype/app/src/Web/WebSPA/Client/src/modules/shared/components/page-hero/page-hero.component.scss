@@ -1,0 +1,41 @@
+@import 'src/styles/variables';
+
+.container-fluid {
+    background-color: $color-secondary;
+}
+
+.row {
+    padding: 3% 12% 2%;
+
+    > div:nth-child(2) {
+        color: $color-primary;
+        align-self: center;
+        padding: 0% 5%;
+    }
+
+    .hr {
+        border: 1px ridge $color-primary;
+    }
+
+    .page-header-title {
+        font-weight: bolder;
+        font-size: 3em;
+        text-transform: uppercase;
+    }
+
+    button {
+        color: white;
+        float: right;
+        padding: 0.7em 1.3em;
+        box-shadow: 7px 7px 10px -5px $color-primary;
+        border: 0;
+    }
+
+    img {
+        filter: blur(0.2px);
+    }
+
+    .page-header-content {
+        font-family: montserrat medium;
+    }
+}

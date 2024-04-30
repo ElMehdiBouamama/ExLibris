@@ -1,0 +1,40 @@
+:host {
+    background-color: white;
+}
+
+.mat-list {
+    padding: 0;
+}
+
+h4 {
+    font-weight: 500;
+    padding: 1rem 16px 1rem 16px;
+    margin: 0;
+    color: #25459e;
+}
+
+a {
+    height: 40px !important;
+}
+
+mat-divider {
+    border-color: #25459e26;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+mat-nav-list {
+    padding-top: 0;
+    margin-bottom: 1rem;
+}
+
+mat-icon {
+    margin-right: 1rem;
+    color: #5d5d5d;
+    position: relative;
+    top: 6px;
+}
+
+a mat-icon:last-child {
+    margin-left: auto;
+    margin-right: 0;
+}

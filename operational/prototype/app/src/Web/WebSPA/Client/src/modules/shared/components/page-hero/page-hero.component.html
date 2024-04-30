@@ -1,0 +1,13 @@
+﻿<section class="container-fluid">
+    <div class="row">
+        <div class="col-5">
+            <img src="{{img.src}}" alt="{{img.alt}}" class="img-fluid hover-shadow" />
+        </div>
+        <div class="col-7">
+            <h1 class="page-header-title" [innerHtml]="title | safeHTML"></h1>
+            <hr class="hr" />
+            <p class="page-header-content" [innerHtml]="content | safeHTML"></p>
+            <button class="bg-primary">{{btn}}</button>
+        </div>
+    </div>
+</section>

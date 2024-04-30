@@ -1,0 +1,49 @@
+<app-top-header-info></app-top-header-info>
+<mat-toolbar role="heading" class="container-fluid mx-auto d-flex">
+    <div>
+        <button mat-fab matRipple [matRippleDisabled]="true" class="mat-primary" aria-label="Menu" (click)="toggleMenu()">
+            <mat-icon fontIcon="menu"></mat-icon>
+        </button>
+    </div>
+    <div>
+        <button mat-fab matRipple [matRippleDisabled]="true" class="mat-primary" aria-label="Logo LMagasa" (click)="goToHome()">
+            <img src="assets/logo/ExLibris_Text.svg" />
+        </button>
+        <div>
+            <mat-form-field appearance="outline" [ngClass]="{'active': searchEnabled}">
+                <input id="typeahead-http"
+                       class="form-control"
+                       type="search"
+                       matInput
+                       [class.is-invalid]="searchFailed"
+                       [ngbTypeahead]="productSearch"
+                       placeholder="Chercher un chachet" />
+                <small *ngIf="searching" class="form-text text-muted">searching...</small>
+            </mat-form-field>
+            <button mat-fab class="mat-primary" aria-label="Search" (click)="searchEnabled=!searchEnabled">
+                <mat-icon fontIcon="search"></mat-icon>
+            </button>
+            <button mat-fab class="mat-primary" aria-label="Shopping Cart">
+                <mat-icon fontIcon="shopping_cart"></mat-icon>
+            </button>
+            <button mat-fab class="mat-primary" aria-label="Notifications">
+                <mat-icon fontIcon="notifications"></mat-icon>
+            </button>
+            <button mat-fab class="mat-primary" aria-label="Profil">
+                <span><b>M</b></span>
+            </button>
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-menu #categories="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item>
+        <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+        <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+        <span>Disable alerts</span>
+    </button>
+</mat-menu>

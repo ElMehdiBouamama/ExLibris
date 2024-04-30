@@ -1,0 +1,54 @@
+<mat-card mat-elevation-z3 role="group">
+    <div class="card-content">
+        <div class="left-section">
+            <img [src]="item.pictureUri">
+            <div>
+                <span class="reviews">
+                    <ngb-rating [rate]="3.3" [max]="5" [readonly]="true"></ngb-rating>
+                    (65)
+                </span>
+                <p class="old-price">{{item.price | number: '1.2-2' }} Dhs</p>
+                <p class="new-price">{{item.price | number: '1.2-2' }} Dhs</p>
+            </div>
+        </div>
+        <div class="right-section">
+            <mat-card-header class="mat-elevation-z2">
+                <mat-card-title-group>
+                    <mat-card-title>
+                        <p class="item-brand">{{item.catalogBrand}}</p>
+                        <p class="item-name">{{item.name}}</p>
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        <p class="item-lines">{{item.lines}} lignes</p>
+                        <hr class="hr" />
+                        <p class="item-dimensions">{{item.dimensions[0]}} x {{item.dimensions[1]}} mm</p>
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="d-flex flex-column">
+                <!--<ngb-rating [rate]="3" [max]="5" [readonly]="true"></ngb-rating>-->
+                <mat-button-toggle-group #group="matButtonToggleGroup">
+                    <mat-button-toggle value="Neonorange" aria-label="Orange stamp" [style.color]="'#F2994A'">
+                        <mat-icon>lens</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="Skyblue" aria-label="Blue stamp" [style.color]="'#2D9CDB'">
+                        <mat-icon>lens</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="Applegreen" aria-label="Green stamp" [style.color]="'#8CCA65'">
+                        <mat-icon>lens</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="Fuchsiapink" aria-label="Pink stamp" [style.color]="'#DC5CA4'">
+                        <mat-icon>lens</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="Flamered" aria-label="Red stamp" [style.color]="'#EB5757'" [checked]="true">
+                        <mat-icon>lens</mat-icon>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+                <span class="item-description">{{item.description}}</span>
+            </mat-card-content>
+            <mat-card-actions class="align-self-end">
+                <button mat-button mat-elevation-z2 (click)="goToItem()">acheter</button>
+            </mat-card-actions>
+        </div>
+    </div>
+</mat-card>

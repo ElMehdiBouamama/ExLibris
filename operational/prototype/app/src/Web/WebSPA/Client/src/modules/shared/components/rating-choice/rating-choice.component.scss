@@ -1,0 +1,12 @@
+@import 'src/styles/variables';
+
+.reviews {
+    font-size: 12px;
+
+    ngb-rating {
+        color: $color-secondary;
+        font-size: 18px;
+        position: relative;
+        top: 2px;
+    }
+}

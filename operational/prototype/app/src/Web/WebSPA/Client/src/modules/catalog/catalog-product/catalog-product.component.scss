@@ -1,0 +1,211 @@
+@import 'src/styles/variables';
+
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px;
+}
+
+mat-card {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    background: $color-brightest;
+
+    .card-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            padding-left: 16px;
+            justify-content: space-between;
+
+            img {
+                width: auto;
+                height: auto;
+                padding: 16px 0;
+            }
+
+            i {
+                font-size: 1.5rem;
+                padding-right: 0.1rem;
+                color: white;
+            }
+
+            .filled {
+                color: $color-secondary;
+            }
+
+            .reviews {
+                font-size: 12px;
+
+                ngb-rating {
+                    color: $color-secondary;
+                    font-size: 18px;
+                }
+            }
+
+
+
+            .old-price {
+                color: #F08F8F;
+                font-size: 0.75rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1rem;
+                letter-spacing: 0.025rem;
+                text-decoration-line: line-through;
+                margin: 0;
+            }
+
+            .new-price {
+                color: #000;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1.5rem;
+                letter-spacing: 0.00938rem;
+                margin-bottom: 8px;
+            }
+        }
+
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            width: min-content;
+            justify-content: space-between;
+
+            mat-button-toggle-group {
+                width: fit-content;
+                border: none;
+
+                mat-button-toggle {
+                    border: none !important;
+
+
+                    ::ng-deep .mat-button-toggle-label-content {
+                        padding: 2px;
+                    }
+                }
+
+                mat-icon {
+                    font-size: 1rem;
+                    width: 1rem;
+                    height: 1rem;
+                }
+
+                .mat-button-toggle-checked {
+                    background-color: transparent;
+
+                    mat-icon {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            mat-card-header {
+                background-color: $color-primary;
+                color: white;
+                align-self: flex-end;
+                text-align: right;
+                padding: 20px 20px 10px 15px;
+                z-index: 1;
+
+                mat-card-title-group {
+                    ::ng-deep div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+
+                    mat-card-title {
+                        .item-brand {
+                            color: #FFF;
+                            font-size: 1.375rem;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 0.875rem;
+                            letter-spacing: 0.03125rem;
+                            margin-bottom: 0.3rem;
+                        }
+
+                        .item-name {
+                            color: $color-brightest;
+                            font-size: 0.75rem;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 0.875rem;
+                            letter-spacing: 0.03125rem;
+                        }
+                    }
+
+                    mat-card-subtitle {
+                        text-align: right;
+
+                        .item-lines {
+                            color: $color-brightest;
+                            font-size: 1rem;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 1.125rem;
+                            margin-top: 20px;
+                            margin-bottom: 0;
+                        }
+
+                        .hr {
+                            border-color: $color-secondary;
+                            opacity: 1;
+                            margin: 4px 0;
+                        }
+
+                        .item-dimensions {
+                            color: $color-brightest;
+                            font-size: 0.625rem;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 1.125rem;
+                            letter-spacing: 0.0625rem;
+                            margin: 4px 0;
+                            width: max-content;
+                        }
+                    }
+                }
+            }
+
+            mat-card-content {
+                width: auto;
+                padding: 0;
+
+                .item-description {
+                    color: #636363;
+                    font-size: 0.875rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1rem;
+                    letter-spacing: 0.03125rem;
+                    margin-bottom: 10px;
+                }
+            }
+
+            mat-card-actions {
+                padding: 0;
+                width: 100%;
+
+                button {
+                    background-color: $color-secondary;
+                    color: $color-primary;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px 0 0 0;
+                    font-size: 1rem;
+                    font-variant-caps: all-small-caps;
+                }
+            }
+        }
+    }
+}

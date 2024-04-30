@@ -1,0 +1,144 @@
+@import 'src/styles/variables';
+
+:host{
+    position: sticky;
+    top:0 ;
+    width: 100%;
+    z-index: 10;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    background-color: $color-primary;
+    height: 96px;
+
+    > div:nth-child(2) {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-right: 8vw;
+        margin-left: 9vw;
+        -webkit-align-items: center;
+        align-items: center;
+
+        > div {
+            display: flex;
+            align-items: center;
+        }
+
+        button[aria-label='Profil'] {
+            background-color: $color-brightest;
+            color: $color-primary;
+            width: 36px;
+            height: 36px;
+
+            span {
+            }
+        }
+    }
+
+    button {
+        margin: 0 10px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    mat-icon {
+        font-size: 24px;
+        height: auto;
+        width: auto;
+    }
+
+    mat-form-field.active {
+        opacity: 1;
+        width: 30vw;
+    }
+
+    mat-form-field {
+        padding-top: 24px;
+        opacity: 0;
+        width: 0vw;
+        transition: width .15s ease-in-out;
+
+        button {
+            height: 2em !important;
+            margin: 0;
+        }
+
+        mat-icon {
+            background-color: transparent;
+            color: #25459E;
+            font-size: 18px;
+        }
+
+        input {
+            color: black;
+            font-size: 12px;
+        }
+
+        input:focus {
+            box-shadow: none;
+        }
+    }
+
+    ::ng-deep {
+        .mat-mdc-text-field-wrapper {
+            background-color: $color-brightest;
+        }
+
+        .mat-form-field-appearance-outline .mat-form-field-flex {
+            padding: 0 !important;
+            height: 100%;
+        }
+
+        .mat-mdc-form-field-infix {
+            align-self: center;
+            padding: 0 10px;
+        }
+
+        .mat-form-field-suffix, .mat-form-field-suffix .mat-icon-button {
+            background-color: $color-secondary;
+        }
+
+        .mat-form-field-flex {
+            overflow: hidden;
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        .mat-form-field-flex:focus-within {
+            border-radius: 0 !important;
+        }
+
+        .mat-form-field-outline {
+            background-color: white;
+        }
+
+        .mat-form-field-suffix, .mat-form-field-prefix {
+            top: 0 !important;
+        }
+
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+            top: 0 !important;
+        }
+
+        .mat-form-field-wrapper {
+            margin: 1.5em 0 1.25em 0 !important;
+        }
+
+        .mat-form-field-flex:hover .mat-form-field-outline {
+            transition: none !important;
+        }
+
+        .mat-drawer-backdrop.mat-drawer-shown {
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .mat-mdc-form-field-flex {
+            align-items: center;
+            height: 40px;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "google_font_API_Key": "AIzaSyBuHHy-yWbDD_L9i1fxJYntIduPMMD4dzI",
+  "google_font_API_URL": "https://www.googleapis.com/webfonts/v1/webfonts",
+  "canvas": {
+    "id": "stampCanvas",
+    "hasControls": true,
+    "lockMovementX": false,
+    "lockMovementY": false,
+    "hasBorders": true,
+    "_wordJoiners": "/[]/"
+  },
+  "grid": {
+    "offset": {
+      "x": 20,
+      "y": 20
+    },
+    "interval": 50,
+    "unitByPx": 5
+  }
+}

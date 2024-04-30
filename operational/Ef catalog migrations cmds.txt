@@ -1,0 +1,4 @@
+Function AddCatalogMigration {Add-Migration "UpdateStampSupport" -StartupProject Catalog.API -Context CatalogContext -OutputDir Infrastructure/CatalogMigrations}
+Set-Alias -Name Add-Catalog-Migration -Value AddCatalogMigration
+Function RemoveCatalogMigration {Remove-Migration -StartupProject Catalog.API -Context CatalogContext; git restore Services\Catalog\Catalog.API\Infrastructure\CatalogMigrations\CatalogContextModelSnapshot.cs}
+Set-Alias -Name Remove-Catalog-Migration -Value RemoveCatalogMigration

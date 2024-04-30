@@ -1,0 +1,15 @@
+<div class="container d-flex justify-content-between py-4">
+
+    <mat-chip-set role="list" class="align-items-center">
+        <mat-chip-option class="mat-elevation-z1" *ngFor="let filter of filters" (click)="filter.selected = !filter.selected">
+            {{filter.name}}
+        </mat-chip-option>
+    </mat-chip-set>
+
+    <mat-button-toggle-group value="all" class="mat-elevation-z1" aria-label="availabilityFilter">
+        <mat-button-toggle value="all" selected>Tous</mat-button-toggle>
+        <mat-button-toggle value="available">Disponible</mat-button-toggle>
+        <mat-button-toggle value="unavailable">Indisponible</mat-button-toggle>
+    </mat-button-toggle-group>
+
+</div>

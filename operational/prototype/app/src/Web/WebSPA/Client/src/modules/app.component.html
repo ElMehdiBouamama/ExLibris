@@ -1,0 +1,23 @@
+<div #splashScreen [class.splash-screen-enabled]="showSplash" [class.splash-screen-disabled]="!showSplash">
+    Loading... Please wait
+    <mat-spinner></mat-spinner>
+</div>
+<mat-sidenav-container hasBackdrop="true" [style.display]="!showSplash ? 'block' : 'none'">
+    <mat-sidenav #sidenav fixedTopGap="40" fixedInViewport="true" mode="over">
+        <div class="container-fluid">
+            <div class="row">
+                <button mat-icon-button class="mat-primary">
+                    <mat-icon class="mat-primary">close</mat-icon>
+                </button>
+                <img src="assets/logo/ExLibris_Text.svg" alt="Logo ExLibris" aria-label="Logo" />
+            </div>
+            <div class="row">
+                <app-header-left-menu [container]="sidenav"></app-header-left-menu>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header (menuToggled)="onMenuToggled()"></app-header>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

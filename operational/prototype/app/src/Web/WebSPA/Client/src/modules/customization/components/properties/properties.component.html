@@ -1,0 +1,99 @@
+<div class="mt-3 d-flex-row flex-wrap" *ngIf="($selectedItem | async) as selectedItem">
+    <mat-form-field *ngIf="selectedItem?.isText()">
+        <mat-select [(ngModel)]="selectedItem.element.fontFamily" (openedChange)="onFontSelectOpen($event)" #singleSelect>
+            <mat-option>
+                <ngx-mat-select-search [formControl]="fontFilterCtrl" placeholderLabel="search" noEntriesFoundLabel="No matching font found"></ngx-mat-select-search>
+            </mat-option>
+            <cdk-virtual-scroll-viewport itemSize="48" [minBufferPx]="4*48" [maxBufferPx]="5*48" [style.height.px]=4*48 [appendOnly]="true">
+                <mat-option *cdkVirtualFor="let font of $filteredFonts | async" [value]="font?.family" [style.font-family]="font?.family + ' menu'">
+                    <div class="fontOption">
+                        {{font?.family}}
+                        <!--<mat-spinner [diameter]="16" *ngIf="!font?.loaded"></mat-spinner>-->
+                    </div>
+                </mat-option>
+            </cdk-virtual-scroll-viewport>
+        </mat-select>
+    </mat-form-field>
+    <!--<mat-form-field>
+        <mat-label>Text size</mat-label>
+        <mat-select [(value)]="fontSize">
+            <mat-option [value]="16">16</mat-option>
+            <mat-option [value]="20">20</mat-option>
+            <mat-option [value]="24">24</mat-option>
+            <mat-option [value]="28">28</mat-option>
+            <mat-option [value]="32">32</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-button-toggle-group #fontStyleGroup="matButtonToggleGroup" aria-label="Font Style" (change)="onFontStyleChanged(fontStyleGroup.value)" multiple>
+        <mat-button-toggle value="bold">
+            <mat-icon>format_bold</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="italic">
+            <mat-icon>format_italic</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="reverted">
+            <mat-icon>autorenew</mat-icon>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="w-100 d-flex flex-column flex-wrap">
+        <div class="w-100 pt-4">
+            <label>Horizontal Position</label>
+            <div class="w-100 d-flex">
+                <button mat-icon-button aria-label="Left arrow icon" (click)="horizontalPosition = horizontalPosition - 1">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                </button>
+                <mat-slider min="0" max="400" step="1" showTickMarks discrete [disableRipple]="true">
+                    <input matSliderThumb [(ngModel)]="horizontalPosition">
+                </mat-slider>
+                <button mat-icon-button aria-label="Right arrow icon" (click)="horizontalPosition = horizontalPosition + 1">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="w-100 pt-4">
+            <label>Vertical Position</label>
+            <div class="w-100 d-flex">
+                <button mat-icon-button aria-label="Left arrow icon" (click)="verticalPosition = verticalPosition - 1">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                </button>
+                <mat-slider min="0" max="400" step="1" showTickMarks discrete [disableRipple]="true">
+                    <input matSliderThumb [(ngModel)]="verticalPosition">
+                </mat-slider>
+                <button mat-icon-button aria-label="Right arrow icon" (click)="verticalPosition = verticalPosition + 1">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="w-100 pt-4">
+            <label>Rotation Angle</label>
+            <div class="w-100 d-flex">
+                <button mat-icon-button aria-label="Left arrow icon" (click)="rotationAngle = rotationAngle - 1">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                </button>
+                <mat-slider min="-180" max="180" step="1" showTickMarks discrete disableRipple>
+                    <input matSliderThumb [(ngModel)]="rotationAngle">
+                </mat-slider>
+                <button mat-icon-button aria-label="Right arrow icon" (click)="rotationAngle = rotationAngle + 1">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+
+<!--<mat-form-field>
+    <mat-select [(ngModel)]="fontFamily" [(value)]="fontFamily" [placeholder]="fontFamily" (openedChange)="onFontSelectOpen($event)" #singleSelect>
+        <mat-option>
+            <ngx-mat-select-search [formControl]="fontFilterCtrl" placeholderLabel="search" noEntriesFoundLabel="No matching font found"></ngx-mat-select-search>
+        </mat-option>
+        <cdk-virtual-scroll-viewport itemSize="48" [minBufferPx]="4*48" [maxBufferPx]="5*48" [style.height.px]=4*48 (scrolledIndexChange)="updatefontSelectIndex($event)">
+            <mat-option *cdkVirtualFor="let font of filteredFonts | async" [value]="font?.family" [style.font-family]="font?.family + ' menu'">
+                <div class="fontOption">
+                    {{font?.family}}
+                    <mat-spinner [diameter]="16" *ngIf="!font?.loaded"></mat-spinner>
+                </div>
+            </mat-option>
+        </cdk-virtual-scroll-viewport>
+    </mat-select>
+</mat-form-field>-->
